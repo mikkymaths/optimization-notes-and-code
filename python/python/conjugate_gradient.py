@@ -2,8 +2,9 @@ import numpy as np
 
 def conjugate_gradient(A, b, x0=None, tol=1e-6, max_iter=None):
     """
-    Linear Conjugate Gradient method for solving Ax = b,
-    where A is symmetric positive definite.
+    Solve the linear system Ax = b using the Conjugate Gradient method.
+
+    This implementation assumes that A is symmetric and positive definite.
 
     Parameters
     ----------
@@ -12,16 +13,16 @@ def conjugate_gradient(A, b, x0=None, tol=1e-6, max_iter=None):
     b : ndarray
         Right-hand side vector.
     x0 : ndarray, optional
-        Initial guess.
-    tol : float
-        Convergence tolerance.
+        Initial guess for the solution.
+    tol : float, optional
+        Convergence tolerance on the residual norm.
     max_iter : int, optional
         Maximum number of iterations.
 
     Returns
     -------
     x : ndarray
-        Approximate solution.
+        Approximate solution to the system.
     """
     n = len(b)
     if x0 is None:
